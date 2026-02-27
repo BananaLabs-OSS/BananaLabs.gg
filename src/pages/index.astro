@@ -1,0 +1,205 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import FaqAccordion from '../components/FaqAccordion.tsx';
+import ContactForm from '../components/ContactForm.tsx';
+import SessionsStatus from '../components/SessionsStatus.tsx';
+import { RepoTag } from '../components/GitHubStats.tsx';
+---
+
+<Base title="BananaLabs — Open-Source Game Infrastructure">
+  <Nav />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <span class="hero-icon">🍌</span>
+      <h1>BananaKit</h1>
+      <p class="subtitle">Open-source game infrastructure. Orchestration, matchmaking, auth, friends, parties, networking. MIT licensed. Runs on your hardware.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/BananaLabs-OSS" class="btn btn-primary">Browse on GitHub</a>
+        <a href="#ecosystem" class="btn btn-secondary" onclick="event.preventDefault();document.querySelector('#ecosystem')?.scrollIntoView({behavior:'smooth'})">See the Ecosystem</a>
+      </div>
+      <p class="hero-note">MIT licensed &middot; runs on your metal</p>
+    </div>
+    <button class="hero-scroll" onclick="document.querySelector('#ecosystem')?.scrollIntoView({behavior:'smooth'})">THE STACK <span>↓</span></button>
+  </section>
+
+  <!-- ECOSYSTEM -->
+  <section id="ecosystem" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>The ecosystem</h2>
+        <p>Every piece is independent. Use one, use all. Born from years of running real game servers.</p>
+      </div>
+      <div class="eco-grid">
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🧪</span>
+            <span class="eco-name">Potassium</span>
+            <RepoTag repo="Potassium" client:load />
+          </div>
+          <p>Core orchestration library. Provider-based — Docker, Pterodactyl, Agones, or your own backend.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🐳</span>
+            <span class="eco-name">Bananagine</span>
+            <RepoTag repo="Bananagine" client:load />
+          </div>
+          <p>Container orchestration. Full lifecycle — spin-up, registry, teardown.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🔀</span>
+            <span class="eco-name">Bananasplit</span>
+            <RepoTag repo="Bananasplit" client:load />
+          </div>
+          <p>Matchmaking and player routing. Queues, skill-based matching, lobbies.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🌐</span>
+            <span class="eco-name">Peel</span>
+            <RepoTag repo="Peel" client:load />
+          </div>
+          <p>UDP relay with dynamic routes. Per-player routing, seamless transfers.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🔐</span>
+            <span class="eco-name">BananAuth</span>
+            <RepoTag repo="BananAuth" client:load />
+          </div>
+          <p>Auth service. OAuth, email OTP, TOTP, sessions, shared JWT middleware.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🍇</span>
+            <span class="eco-name">Bunch</span>
+            <RepoTag repo="Bunch" client:load />
+          </div>
+          <p>Friends and presence. Relationships, requests, blocks, real-time status.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🤝</span>
+            <span class="eco-name">Hand</span>
+            <RepoTag repo="Hand" client:load />
+          </div>
+          <p>Party system. Persistent groups with invite codes across sessions.</p>
+          <span class="eco-tag eco-tag-go">Go</span>
+        </div>
+        <div class="eco-card">
+          <div class="eco-top">
+            <span class="eco-icon">🧵</span>
+            <span class="eco-name">Fiber</span>
+            <RepoTag repo="Fiber" client:load />
+          </div>
+          <p>Client SDK. Clean API surface for connecting apps to BananaKit.</p>
+          <span class="eco-tag eco-tag-multi">Multi-language</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <section id="start" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Get started in three steps.</h2>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <div class="card-num">01</div>
+          <h3>Pull the images</h3>
+          <p>Every service publishes Docker images to GitHub Container Registry. One <code>docker pull</code> and you're running.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-num">02</div>
+          <h3>Configure</h3>
+          <p>Environment variables and CLI flags. Set your JWT secret, database path, listen address. That's it.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <div class="card-num">03</div>
+          <h3>Ship</h3>
+          <p>Your hardware. Your network. No cloud lock-in, no vendor calls. BananaKit disappears, you keep running.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PITCH -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Why does this exist?</h2>
+        <p>Because every game backend platform either locks you in, charges per-seat, or both.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:12px">🔓</div>
+          <h3>No lock-in</h3>
+          <p>Runs on your hardware, your network. If BananaKit disappears, your servers keep running.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:12px">💰</div>
+          <h3>No per-seat pricing</h3>
+          <p>MIT licensed. No license fees, no "open core" bait-and-switch.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:12px">✅</div>
+          <h3>Battle-tested</h3>
+          <p><a href="https://sessions.gg" style="color:#22c55e">Sessions.gg</a> runs entirely on BananaKit in production. It's not a demo — it takes real money and serves real players.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO USES IT -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Who uses BananaKit?</h2>
+        <p>BananaKit is maintained by BananaLabs. Commercial products are built by <a href="https://monkeylabs.gg" style="color:#c49a6c">MonkeyLabs</a>.</p>
+      </div>
+      <div class="product-list">
+        <a href="https://sessions.gg" target="_blank" class="product">
+          <div class="product-top">
+            <span class="product-icon">🎮</span>
+            <span class="product-name">Sessions.gg</span>
+            <div class="product-badges">
+              <SessionsStatus client:load />
+              <span class="product-badge badge-ml">by MonkeyLabs</span>
+            </div>
+          </div>
+          <p>Binge-style game servers — pay once, play until it expires, no subscriptions. A commercial product built entirely on BananaKit. Proof the stack works.</p>
+          <div class="product-meta">
+            <span>🎮 Game servers</span>
+            <span>💳 No subscriptions</span>
+            <span>🔧 Powered by BananaKit</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqAccordion client:visible />
+
+  <!-- CONTACT -->
+  <ContactForm client:visible />
+
+  <Footer />
+</Base>
