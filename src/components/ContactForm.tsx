@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const API_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:8080';
+
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
@@ -15,12 +17,13 @@ export default function ContactForm() {
     const email = formData.get('email') as string;
     const subject = formData.get('subject') as string;
     const message = formData.get('message') as string;
+    const website = formData.get('website') as string;
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, subject, message }),
+        body: JSON.stringify({ email, subject, message, source: 'bananalabs', website }),
       });
 
       if (!res.ok) {
@@ -28,7 +31,9 @@ export default function ContactForm() {
         throw new Error(data.error || 'Something went wrong');
       }
 
+      form.reset();
       setSent(true);
+      setTimeout(() => setSent(false), 4000);
     } catch (err: any) {
       setError(err.message || 'Failed to send message');
     } finally {
@@ -56,8 +61,16 @@ export default function ContactForm() {
             <label className="contact-label">Message</label>
             <textarea className="contact-textarea" name="message" placeholder="What's on your mind?" required />
           </div>
+          <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0, overflow: 'hidden' }}>
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+          </div>
           {error && <p style={{ color: '#ff4444', fontSize: '13px', marginBottom: '12px' }}>{error}</p>}
-          <button className="contact-submit" type="submit" disabled={sent || sending}>
+          <button
+            className="contact-submit"
+            type="submit"
+            disabled={sent || sending}
+            style={sent ? { opacity: 0.5, cursor: 'not-allowed' } : undefined}
+          >
             {sent ? "Sent! We'll get back to you." : sending ? 'Sending...' : 'Send Message'}
           </button>
           <p className="contact-note">
