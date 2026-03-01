@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const SESSIONS_API = import.meta.env.DEV ? 'http://localhost:8080' : 'https://sessions.gg';
+const SESSIONS_API = import.meta.env.PUBLIC_API_URL || 'https://api.sessions.gg';
 
 function updateAlerts(data: any) {
   const container = document.getElementById('status-alerts');
