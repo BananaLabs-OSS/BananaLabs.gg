@@ -314,12 +314,20 @@ footer {
 /* ═══════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .nav-right { display: none }
+  #promo-banner {
+    position: fixed !important; top: 56px; left: 0; right: 0;
+    transform: none !important; justify-content: center;
+    padding: 6px 10px; border-radius: 0;
+    background: rgba(22,22,24,.95); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border); z-index: 99;
+  }
+}
 @media (max-width: 768px) {
   .card-grid { grid-template-columns: 1fr }
   .eco-grid { grid-template-columns: 1fr }
   nav { padding: 0 16px; height: 56px }
-  .nav-link.hide-mobile { display: none }
-  .nav-link-ext.hide-mobile { display: none }
   #status-alerts {
     position: fixed !important; top: 56px; left: 0; right: 0;
     transform: none !important; justify-content: center;
@@ -328,7 +336,6 @@ footer {
     border-bottom: 1px solid var(--border); z-index: 99;
   }
   #status-alerts .status-alert { font-size: 10px; padding: 3px 10px; }
-  #promo-banner { display: none !important }
   .hero { min-height: 85vh; padding: 80px 20px 60px }
   .hero-actions { flex-direction: column; align-items: center }
   .btn { width: 100%; max-width: 320px; justify-content: center }
