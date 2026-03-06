@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import FaqAccordion from '../components/FaqAccordion.tsx';
 import ContactForm from '../components/ContactForm.tsx';
 import SessionsStatus from '../components/SessionsStatus.tsx';
-import { RepoTag } from '../components/GitHubStats.tsx';
+import { RepoTag, RepoLang } from '../components/GitHubStats.tsx';
 ---
 
 <Base title="BananaLabs — Open-Source Game Infrastructure">
@@ -15,7 +15,6 @@ import { RepoTag } from '../components/GitHubStats.tsx';
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <span class="hero-icon">🍌</span>
       <h1>BananaLabs</h1>
       <p class="subtitle">Open-source game infrastructure. Orchestration, matchmaking, auth, friends, parties, networking. MIT licensed. Runs on your hardware.</p>
       <div class="hero-actions">
@@ -37,75 +36,67 @@ import { RepoTag } from '../components/GitHubStats.tsx';
       <div class="eco-grid">
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🧪</span>
             <span class="eco-name">Potassium</span>
             <RepoTag repo="Potassium" client:load />
           </div>
           <p>Core orchestration library. Provider-based — Docker, Pterodactyl, Agones, or your own backend.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Potassium" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🐳</span>
             <span class="eco-name">Bananagine</span>
             <RepoTag repo="Bananagine" client:load />
           </div>
           <p>Container orchestration. Full lifecycle — spin-up, registry, teardown.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Bananagine" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🔀</span>
             <span class="eco-name">Bananasplit</span>
             <RepoTag repo="Bananasplit" client:load />
           </div>
           <p>Matchmaking and player routing. Queues, skill-based matching, lobbies.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Bananasplit" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🌐</span>
             <span class="eco-name">Peel</span>
             <RepoTag repo="Peel" client:load />
           </div>
           <p>UDP relay with dynamic routes. Per-player routing, seamless transfers.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Peel" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🔐</span>
             <span class="eco-name">BananAuth</span>
             <RepoTag repo="BananAuth" client:load />
           </div>
           <p>Auth service. OAuth, email OTP, TOTP, sessions, shared JWT middleware.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="BananAuth" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🍇</span>
             <span class="eco-name">Bunch</span>
             <RepoTag repo="Bunch" client:load />
           </div>
           <p>Friends and presence. Relationships, requests, blocks, real-time status.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Bunch" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🤝</span>
             <span class="eco-name">Hand</span>
             <RepoTag repo="Hand" client:load />
           </div>
           <p>Party system. Persistent groups with invite codes across sessions.</p>
-          <span class="eco-tag eco-tag-go">Go</span>
+          <RepoLang repo="Hand" client:load />
         </div>
         <div class="eco-card">
           <div class="eco-top">
-            <span class="eco-icon">🧵</span>
             <span class="eco-name">Fiber</span>
             <RepoTag repo="Fiber" client:load />
           </div>
-          <p>Client SDK. Clean API surface for connecting apps to BananaKit.</p>
-          <span class="eco-tag eco-tag-multi">Multi-language</span>
+          <p>Client SDK. Clean API surface for connecting apps to BananaKit. Java today, more languages coming.</p>
+          <RepoLang repo="Fiber" client:load />
         </div>
       </div>
     </div>
@@ -177,7 +168,6 @@ import { RepoTag } from '../components/GitHubStats.tsx';
       <div class="product-list">
         <a href="https://sessions.gg" target="_blank" class="product">
           <div class="product-top">
-            <span class="product-icon">🎮</span>
             <span class="product-name">Sessions.gg</span>
             <div class="product-badges">
               <SessionsStatus client:load />
@@ -188,7 +178,7 @@ import { RepoTag } from '../components/GitHubStats.tsx';
           <div class="product-meta">
             <span>🎮 Game servers</span>
             <span>💳 No subscriptions</span>
-            <span>🔧 Powered by BananaKit</span>
+            <span>⚡ Powered by BananaKit</span>
           </div>
         </a>
       </div>

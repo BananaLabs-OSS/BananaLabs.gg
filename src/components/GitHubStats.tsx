@@ -109,3 +109,36 @@ export function RepoTag({ repo }: { repo: string }) {
     </span>
   );
 }
+
+const LANG_CLASSES: Record<string, string> = {
+  Go: 'eco-tag-go',
+  Java: 'eco-tag-go',
+  TypeScript: 'eco-tag-go',
+  JavaScript: 'eco-tag-go',
+  Rust: 'eco-tag-go',
+  Python: 'eco-tag-go',
+};
+
+export function RepoLang({ repo }: { repo: string }) {
+  const [lang, setLang] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchLang() {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${ORG}/${repo}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.language) setLang(data.language);
+      } catch {}
+    }
+    fetchLang();
+  }, [repo]);
+
+  if (!lang) return null;
+
+  return (
+    <span className={`eco-tag ${LANG_CLASSES[lang] || 'eco-tag-go'}`}>
+      {lang}
+    </span>
+  );
+}
