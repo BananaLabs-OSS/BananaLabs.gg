@@ -4,6 +4,6 @@
   "description": "Open-source game infrastructure.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#151517",
-  "theme_color": "#e8b931"
+  "background_color": "#1a1815",
+  "theme_color": "#1a1815"
 }

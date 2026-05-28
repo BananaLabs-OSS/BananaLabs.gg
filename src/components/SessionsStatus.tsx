@@ -64,7 +64,7 @@ export default function SessionsStatus() {
   }, []);
 
   const color = status === 'live' ? 'var(--g)' : status === 'queue' ? 'var(--y)' : status === 'down' ? 'var(--r)' : 'var(--dim)';
-  const bg = status === 'live' ? 'var(--gd)' : status === 'queue' ? 'var(--yd)' : status === 'down' ? 'var(--rd)' : 'rgba(255,255,255,.04)';
+  const bg = status === 'live' ? 'var(--gd)' : status === 'queue' ? 'var(--yd)' : status === 'down' ? 'var(--rd)' : 'rgba(240,232,212,.04)';
   const border = status === 'live' ? 'rgba(34,197,94,.2)' : status === 'queue' ? 'rgba(232,185,49,.2)' : status === 'down' ? 'rgba(248,113,113,.2)' : 'var(--border)';
 
   return (
