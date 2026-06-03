@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<!-- No-flash theme init: runs before the stylesheet so the right theme paints first. -->
+<script>
+(function(){ var DEFAULT='dark';
+  try { document.documentElement.dataset.theme = localStorage.getItem('theme') || DEFAULT; }
+  catch(e){ document.documentElement.dataset.theme = DEFAULT; }
+})();
+</script>
+<title>Banana Labs — open source, for the people who read source</title>
+<meta name="description" content="Banana Labs is the open-source side of one developer's work — free MIT engines, libraries, and tools for multiplayer, orchestration, and the unglamorous backend layer. No signup, no catch.">
+<meta name="theme-color" content="#0a0b08">
+<link rel="canonical" href="https://bananalabs.gg/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bananalabs.gg/">
+<meta property="og:title" content="Banana Labs — open source, for the people who read source">
+<meta property="og:description" content="The open-source side of one developer's work. Free MIT engines, libraries, and tools for multiplayer and the unglamorous backend layer.">
+<meta property="og:image" content="https://bananalabs.gg/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Banana Labs — open source, for the people who read source">
+<meta name="twitter:description" content="The open-source side of one developer's work. Free MIT engines, libraries, and tools for multiplayer and the unglamorous backend layer.">
+<meta name="twitter:image" content="https://bananalabs.gg/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head><body>
+<nav><div class="wrap">
+  <a href="#" class="brand"><img src="/assets/mark.png" srcset="/assets/mark.png 1x, /assets/mark@2x.png 2x" alt="Banana Labs flask mark"><span class="cur">~/</span>bananalabs<span class="blink"></span></a>
+  <div class="navlinks" onclick="this.closest('nav').classList.remove('open')"><a href="#projects" class="dir">projects</a><a href="#about" class="dir">about</a><a href="https://github.com/bananalabs-oss" class="gh">GitHub ↗</a></div>
+  <div style="display:flex;align-items:center;gap:10px"><button class="themetoggle" aria-label="Toggle theme" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="navtoggle" aria-label="Menu" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></button></div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="termwin reveal d1">
+    <div class="termbar"><span class="d r"></span><span class="d y"></span><span class="d g"></span>
+      <span class="ttl"><img src="/assets/mark.png" srcset="/assets/mark.png 1x, /assets/mark@2x.png 2x" alt="">bananalabs — bash — 80×24</span></div>
+    <div class="termbody">
+      <div class="left">
+        <div class="out" style="color:var(--faint);margin-bottom:10px">Last login: Mon 09:24 on ttys001</div>
+        <div class="line prompt">whoami</div>
+        <div class="out">one developer. the stuff I make for the love of it.</div>
+        <div class="line prompt" style="margin-top:12px">cat ./README.md</div>
+        <h1>Open source,<br>for people who <span class="amber">read source.</span></h1>
+        <p class="lede">Banana Labs isn't a company. It's the name I put on the things I build for the fun of it, then give away. <b>Engines, libraries, and tools</b> — MIT, no signup, no catch. If you read source, you're home.</p>
+        <div class="herobtns"><a href="#projects" class="btn btn-amber">ls ./projects →</a><a href="https://github.com/bananalabs-oss" class="btn btn-line">Browse on GitHub ↗</a></div>
+      </div>
+      <div class="flask"><img src="/assets/mark.png" srcset="/assets/mark.png 1x, /assets/mark@2x.png 2x" alt="Banana Labs"></div>
+    </div>
+  </div>
+  <div class="notice"><b>note:</b> here you get the raw engine. The paid, just-works versions live at <a class="glnk" href="https://monkeylabs.gg">monkeylabs.gg</a>. Bring your own terminal.</div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <div class="shead"><div class="path">~/bananalabs/projects</div><h2>The <span class="amber">shelf</span>.</h2>
+    <p>Everything here is free to clone, read, fork, and ship. It's MIT — do what you want with it, just keep the license notice in the source.</p></div>
+  <div class="lsbar"><span class="prompt"></span>ls -la ./projects &nbsp;<span class="comment" id="proj-count"># 8 repositories</span></div>
+  <div class="projects" id="projects-list">
+    <div class="proj"><div class="pname"><span class="fld">▸</span>bananagine</div><div class="pdesc">Container orchestration engine — spin servers up and tear them down clean. The core everything sits on.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>peel</div><div class="pdesc">Low-latency relay and routing. Updates routes on the fly before handing players off between servers.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>pulp</div><div class="pdesc">WebAssembly plugin host. Sandboxed, fast (370k steps/sec), language-agnostic game logic.</div><div class="pmeta"><span class="chip wasm">WASM</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>bananaauth</div><div class="pdesc">OAuth + magic-link auth you can actually self-host. Drop-in identity without renting it.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>potassium</div><div class="pdesc">The shared Go library — common types, helpers, and primitives the rest depend on.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>fiber</div><div class="pdesc">The SDK family — clean client libraries for talking to the engine without reading the whole protocol.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>bunch</div><div class="pdesc">Grouping and session primitives — bundling players, servers, and state into things that move together.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+    <div class="proj"><div class="pname"><span class="fld">▸</span>hand</div><div class="pdesc">The control utility — the CLI and ops glue for driving everything above from one place.</div><div class="pmeta"><span class="chip go">Go</span><span class="chip mit">MIT</span></div></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="shead"><div class="path">~/bananalabs/about</div><h2>man <span class="amber">bananalabs</span></h2></div>
+  <div class="man"><div class="mh">BANANALABS(1)&nbsp;&nbsp;&nbsp;&nbsp;General Commands Manual&nbsp;&nbsp;&nbsp;&nbsp;BANANALABS(1)</div>
+    <div class="mb">
+      <h3>Name</h3><p>bananalabs — the open-source side of one developer's work.</p>
+      <h3>Description</h3>
+      <p>Same hands run <b>Monkey Labs</b>, the company — the difference is posture, not people. Free and for the fun of it lives here; paid and polished lives there. <b>Bananagine is open; Sessions.gg is the product built on it.</b></p>
+      <h3>Philosophy</h3>
+      <div class="philo">
+        <div class="pbox"><div class="k"># extension over invention</div><div class="v">Orchestrate mature primitives — <span class="amber">Docker, WASM, OAuth</span> — instead of reinventing them.</div></div>
+        <div class="pbox"><div class="k"># free means free</div><div class="v"><span class="amber">MIT, no telemetry, no signup.</span> Clone it and go. Trust is the only currency here.</div></div>
+      </div>
+      <h3>See also</h3><p><a class="glnk" href="https://monkeylabs.gg">monkeylabs.gg</a> — the company. &nbsp; <a class="amber" href="https://sessions.gg">sessions.gg</a> — the product. &nbsp; <a class="amber" href="https://github.com/bananalabs-oss">github.com/bananalabs-oss</a> — the source.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-tele"><span>~/bananalabs</span><span>BUILD · STATIC</span><span>CLOUDFLARE · PAGES</span><span>MIT · 2026</span></div>
+  <div class="foot-top">
+    <div class="foot-brand"><a href="#" class="brand"><img src="/assets/mark.png" srcset="/assets/mark.png 1x, /assets/mark@2x.png 2x" alt="Banana Labs flask mark"><span class="cur">~/</span>bananalabs</a><p>Free and open primitives for multiplayer, orchestration, and the unglamorous backend layer. Built for fun, shared on purpose.</p></div>
+    <div class="foot-cols">
+      <div class="fcol"><h5>Projects</h5><a href="https://github.com/bananalabs-oss/bananagine">bananagine</a><a href="https://github.com/bananalabs-oss/peel">peel</a><a href="https://github.com/bananalabs-oss/pulp">pulp</a><a href="https://github.com/bananalabs-oss">all 8 →</a></div>
+      <div class="fcol"><h5>Links</h5><a href="https://github.com/bananalabs-oss">GitHub ↗</a><a href="https://github.com/bananalabs-oss">Docs</a><a href="https://opensource.org/licenses/MIT">License (MIT)</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="cp">// no copyright worth enforcing · just go build something</span>
+    <a href="https://monkeylabs.gg" class="crosslink">the company behind this <span class="arr">→ monkeylabs.gg</span></a>
+  </div>
+</div></footer>
+<script src="/app.js"></script>
+</body></html>

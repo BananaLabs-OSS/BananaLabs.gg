@@ -1,9 +1,0 @@
-{
-  "name": "BananaLabs",
-  "short_name": "BananaLabs",
-  "description": "Open-source game infrastructure.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#1a1815",
-  "theme_color": "#1a1815"
-}
