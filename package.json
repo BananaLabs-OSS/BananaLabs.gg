@@ -1,0 +1,8 @@
+{
+  "name": "bananalabs-gg",
+  "private": true,
+  "description": "Static marketing site. No framework — the build just stages the static files into dist/ so Cloudflare Pages (build output: /dist) publishes them.",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html styles.css app.js robots.txt _headers assets dist/"
+  }
+}
